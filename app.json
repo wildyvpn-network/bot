@@ -1,0 +1,53 @@
+{
+    "name": "WildyVPN Bot",
+    "description": "telegram pluggable userbot",
+    "logo": "http://wildyvpn.my.id/fav2.png",
+    "keywords": [
+        "wildyvpnbot",
+        "telegram",
+        "pluggable",
+        "userbot"
+    ],
+    "repository": "https://github.com/wildyvpn-network/bot",
+    "website": "https://wildyvpn.my.id",
+    "success_url": "https://t.me/wildyvpn",
+    "env": {
+        "LOAD_UNOFFICIAL_PLUGINS": {"description": "Isi true Jika mau Menu Tambahan Jika Tidak Isi false."},
+        "API_ID": {"description": "Di dapat Dari https://my.telegram.org"},
+        "API_HASH": {"description": "Di dapat Dari https://my.telegram.org"},
+        "DATABASE_URL": {"description": "Di Dapat Dari https://cloud.mongodb.com/"},
+        "LOG_CHANNEL_ID": {"description": "ID Grup Telegram"},
+        "HU_STRING_SESSION": {
+            "description": "[USER MODE] - Di dapat dari Bash genstr atau dari termux`",
+            "required": false},
+        "BOT_TOKEN": {
+            "description": "[BOT MODE] - Di Dapat Dari https://t.me/botfather",
+            "required": false},
+        "OWNER_ID": {
+            "description": "[BOT MODE] - ID Telegram Mu",
+            "required": false},
+        "HEROKU_APP_NAME": {
+            "description": "Nama Project Heroku",
+            "required": false},
+        "HEROKU_API_KEY": {
+            "description": "Di Dapai dari https://dashboard.heroku.com/account",
+            "required": false}
+    },
+    "addons": [],
+    "buildpacks": [
+        {"url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"},
+        {"url": "https://github.com/HasibulKabir/heroku-buildpack-rarlab.git"},
+        {"url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"},
+        {"url": "https://github.com/rking32/heroku-buildpack-google-chrome"},
+        {"url": "https://github.com/rking32/heroku-buildpack-chromedriver"},
+        {"url": "https://github.com/chrismytton/heroku-buildpack-jq.git"},
+        {"url": "https://github.com/heroku/heroku-buildpack-apt.git"},
+        {"url": "heroku/python"}
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
